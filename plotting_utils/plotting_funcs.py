@@ -70,7 +70,7 @@ def plot_plane(ax, plane, *args, **kwargs):
 
 
 def plot_3d_image(ax, image, threshold=0.5, *args, **kwargs):
-    vertices, faces = measure.marching_cubes(image, level=threshold)
+    vertices, faces = measure.marching_cubes(image, level=threshold)[:2]
     mesh = Poly3DCollection(vertices[faces], **kwargs)
     ax.add_collection3d(mesh)
     ax.set_xlabel("x")
